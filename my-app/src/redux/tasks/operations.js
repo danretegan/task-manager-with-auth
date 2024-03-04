@@ -7,6 +7,9 @@ export const fetchTasks = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const res = await axios.get("/tasks");
+
+      // Afișează datele în consolă:
+      console.log("Datele din API:", res.data);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
