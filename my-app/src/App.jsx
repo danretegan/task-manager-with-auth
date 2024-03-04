@@ -1,6 +1,7 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -13,8 +14,8 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h3>Vite + React</h3>
       <h1>Task Manager</h1>
+      <Home />
     </>
   );
 }
