@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { deleteTask } from "../../redux/tasks/operations";
 import css from "./Task.module.css";
+import PropTypes from "prop-types";
 
 export const Task = ({ id, text }) => {
   const dispatch = useDispatch();
@@ -14,4 +15,9 @@ export const Task = ({ id, text }) => {
       </button>
     </div>
   );
+};
+
+Task.propTypes = {
+  id: PropTypes.string,
+  text: PropTypes.string,
 };
