@@ -18,6 +18,6 @@ export const Task = ({ id, text }) => {
 };
 
 Task.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   text: PropTypes.string,
 };
