@@ -23,24 +23,25 @@ const tasksSlice = createSlice({
 
       // fetchTasks:
       .addCase(fetchTasks.pending, handlePending)
+      .addCase(fetchTasks.rejected, handleRejected)
       .addCase(fetchTasks.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
       })
-      .addCase(fetchTasks.rejected, handleRejected)
 
       // addTask:
       .addCase(addTask.pending, handlePending)
+      .addCase(addTask.rejected, handleRejected)
       .addCase(addTask.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items.push(action.payload);
       })
-      .addCase(addTask.rejected, handleRejected)
 
       // deleteTask:
       .addCase(deleteTask.pending, handlePending)
+      .addCase(deleteTask.rejected, handleRejected)
       .addCase(deleteTask.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -49,7 +50,6 @@ const tasksSlice = createSlice({
         );
         state.items.splice(index, 1);
       })
-      .addCase(deleteTask.rejected, handleRejected)
 
       // logOut:
       .addCase(logOut.fulfilled, (state) => {
