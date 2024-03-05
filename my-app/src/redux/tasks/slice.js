@@ -20,6 +20,8 @@ const tasksSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+
+      // fetchTasks:
       .addCase(fetchTasks.pending, handlePending)
       .addCase(fetchTasks.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -27,6 +29,8 @@ const tasksSlice = createSlice({
         state.items = action.payload;
       })
       .addCase(fetchTasks.rejected, handleRejected)
+
+      // addTask:
       .addCase(addTask.pending, handlePending)
       .addCase(addTask.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -34,6 +38,8 @@ const tasksSlice = createSlice({
         state.items.push(action.payload);
       })
       .addCase(addTask.rejected, handleRejected)
+
+      // deleteTask:
       .addCase(deleteTask.pending, handlePending)
       .addCase(deleteTask.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -44,6 +50,8 @@ const tasksSlice = createSlice({
         state.items.splice(index, 1);
       })
       .addCase(deleteTask.rejected, handleRejected)
+
+      // logOut:
       .addCase(logOut.fulfilled, (state) => {
         state.items = [];
         state.error = null;
