@@ -24,24 +24,24 @@ export const App = () => {
     <b>Refreshing user...</b>
   ) : (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/task-manager-with-auth/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route
-          path="/register"
+          path="register"
           element={
-            <RestrictedRoute redirectTo="/tasks" component={<RegisterPage />} />
+            <RestrictedRoute redirectTo="tasks" component={<RegisterPage />} />
           }
         />
         <Route
-          path="/login"
+          path="login"
           element={
-            <RestrictedRoute redirectTo="/tasks" component={<LoginPage />} />
+            <RestrictedRoute redirectTo="tasks" component={<LoginPage />} />
           }
         />
         <Route
-          path="/tasks"
+          path="tasks"
           element={
-            <PrivateRoute redirectTo="/login" component={<TasksPage />} />
+            <PrivateRoute redirectTo="login" component={<TasksPage />} />
           }
         />
       </Route>
