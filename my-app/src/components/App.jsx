@@ -29,19 +29,28 @@ export const App = () => {
         <Route
           path="register"
           element={
-            <RestrictedRoute redirectTo="tasks" component={<RegisterPage />} />
+            <RestrictedRoute
+              redirectTo="/task-manager-with-auth/tasks"
+              component={<RegisterPage />}
+            />
           }
         />
         <Route
           path="login"
           element={
-            <RestrictedRoute redirectTo="tasks" component={<LoginPage />} />
+            <RestrictedRoute
+              redirectTo="/task-manager-with-auth/tasks"
+              component={<LoginPage />}
+            />
           }
         />
         <Route
           path="tasks"
           element={
-            <PrivateRoute redirectTo="login" component={<TasksPage />} />
+            <PrivateRoute
+              redirectTo="/task-manager-with-auth/login"
+              component={<TasksPage />}
+            />
           }
         />
       </Route>
