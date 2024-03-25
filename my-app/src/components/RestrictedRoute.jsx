@@ -17,6 +17,6 @@ export const RestrictedRoute = ({
 };
 
 RestrictedRoute.propTypes = {
-  component: PropTypes.elementType.isRequired,
+  component: PropTypes.element.isRequired,
   redirectTo: PropTypes.string,
 };
